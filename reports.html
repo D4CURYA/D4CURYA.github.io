@@ -7,6 +7,15 @@
     <meta name="description" content="Скачивайте детальные статистические отчеты по аналитике данных.">
     <link rel="stylesheet" href="styles.css">
 </head>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let currentUrl = encodeURIComponent(window.location.href);
+        document.querySelectorAll(".share a").forEach(link => {
+            let href = link.getAttribute("href");
+            link.setAttribute("href", href.replace("https://yourwebsite.com", currentUrl));
+        });
+    });
+</script>
 <body>
 
     <header>
@@ -32,6 +41,27 @@
             <p>Доступны форматы: PDF, Excel, CSV. <a href="contact.html">Запросить консультацию</a> можно через контактную форму.</p>
         </section>
     </main>
+
+    <section class="share">
+        <h3>Поделитесь страницей:</h3>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" 
+           target="_blank" rel="noopener noreferrer">
+            <img src="icons/facebook.png" alt="Поделиться в Facebook">
+        </a>
+        <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com&text=Интересная аналитика!" 
+           target="_blank" rel="noopener noreferrer">
+            <img src="icons/twitter.png" alt="Поделиться в Twitter">
+        </a>
+        <a href="https://vk.com/share.php?url=https://yourwebsite.com" 
+           target="_blank" rel="noopener noreferrer">
+            <img src="icons/vk.png" alt="Поделиться в ВКонтакте">
+        </a>
+        <a href="https://t.me/share/url?url=https://yourwebsite.com&text=Интересный материал!" 
+           target="_blank" rel="noopener noreferrer">
+            <img src="icons/telegram.png" alt="Поделиться в Telegram">
+        </a>
+    </section>
+
 
     <footer>
         <p>&copy; 2025 Аналитика данных | <a href="contact.html">Связаться с нами</a></p>
