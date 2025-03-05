@@ -2,11 +2,16 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Статистика и анализ данных – Графики и отчеты</title>
-    <meta name="description" content="Интерактивные графики, аналитика данных и готовые статистические отчеты.">
+    <meta name="description" content="Платформа для статистического анализа и визуализации данных. Интерактивные графики и аналитические отчеты в реальном времени.">
+    <meta property="og:title" content="Статистика и аналитика данных — Интерактивные графики и отчеты">
+    <meta property="og:description" content="Платформа для визуализации статистических данных и анализа тенденций.">
+    <meta property="og:url" content="https://d4curya.github.io/">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         let currentUrl = encodeURIComponent(window.location.href);
@@ -14,17 +19,31 @@
             let href = link.getAttribute("href");
             link.setAttribute("href", href.replace("https://yourwebsite.com", currentUrl));
         });
+
+        // Мобильное меню
+        document.querySelector(".burger-menu").addEventListener("click", function() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        });
     });
 </script>
+
 <body>
+
+    <div itemprop="description">
+        Платформа для статистического анализа данных. Создавайте отчеты, строите графики и следите за тенденциями в реальном времени.
+    </div>
 
     <header>
         <h1>Статистика и анализ данных</h1>
+        
+        <!-- Бургер-меню для мобильных -->
+        <div class="burger-menu">&#9776;</div>
+
         <nav>
-            <ul>
+            <ul class="nav-links">
                 <li><a href="index.html">Главная</a></li>
-                <li><a href="charts.html">Интерактивные графики</a></li>
-                <li><a href="reports.html">Готовые отчеты</a></li>
+                <li><a href="charts.html">Графики</a></li>
+                <li><a href="reports.html">Отчеты</a></li>
                 <li><a href="contact.html">Контакты</a></li>
             </ul>
         </nav>
@@ -34,36 +53,33 @@
         <section>
             <h2>Аналитика в реальном времени</h2>
             <p>Получайте актуальные <a href="charts.html">диаграммы и статистику</a> с возможностью детального анализа.</p>
-            <img src="images/dashboard.jpg" alt="Интерактивный статистический дашборд" loading="lazy">
+            <img src="images/dashboard.jpg" alt="Интерактивный статистический дашборд" class="responsive-img">
         </section>
 
         <section>
             <h2>Готовые отчеты</h2>
             <p>Скачивайте <a href="reports.html">детальные статистические отчеты</a> для бизнеса и исследований.</p>
-            <img src="images/report-example.jpg" alt="Пример статистического отчета" loading="lazy">
+            <img src="images/report-example.jpg" alt="Пример статистического отчета" class="responsive-img">
         </section>
     </main>
 
     <section class="share">
         <h3>Поделитесь страницей:</h3>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" 
-           target="_blank" rel="noopener noreferrer">
-            <img src="icons/facebook.png" alt="Поделиться в Facebook">
-        </a>
-        <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com&text=Интересная аналитика!" 
-           target="_blank" rel="noopener noreferrer">
-            <img src="icons/twitter.png" alt="Поделиться в Twitter">
-        </a>
-        <a href="https://vk.com/share.php?url=https://yourwebsite.com" 
-           target="_blank" rel="noopener noreferrer">
-            <img src="icons/vk.png" alt="Поделиться в ВКонтакте">
-        </a>
-        <a href="https://t.me/share/url?url=https://yourwebsite.com&text=Интересный материал!" 
-           target="_blank" rel="noopener noreferrer">
-            <img src="icons/telegram.png" alt="Поделиться в Telegram">
-        </a>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" target="_blank">
+                <img src="icons/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com&text=Интересная аналитика!" target="_blank">
+                <img src="icons/twitter.png" alt="Twitter">
+            </a>
+            <a href="https://vk.com/share.php?url=https://yourwebsite.com" target="_blank">
+                <img src="icons/vk.png" alt="ВКонтакте">
+            </a>
+            <a href="https://t.me/share/url?url=https://yourwebsite.com&text=Интересный материал!" target="_blank">
+                <img src="icons/telegram.png" alt="Telegram">
+            </a>
+        </div>
     </section>
-
 
     <footer>
         <p>&copy; 2025 Аналитика данных | <a href="contact.html">Связаться с нами</a></p>
