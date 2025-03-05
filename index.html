@@ -24,6 +24,23 @@
         document.querySelector(".burger-menu").addEventListener("click", function() {
             document.querySelector(".nav-links").classList.toggle("active");
         });
+
+        // Открытие всплывающего окна
+        document.querySelector(".open-modal").addEventListener("click", function() {
+            document.querySelector(".modal").classList.add("show");
+        });
+
+        // Закрытие окна
+        document.querySelector(".close-modal").addEventListener("click", function() {
+            document.querySelector(".modal").classList.remove("show");
+        });
+
+        // Закрытие по клику вне формы
+        window.addEventListener("click", function(event) {
+            if (event.target.classList.contains("modal")) {
+                document.querySelector(".modal").classList.remove("show");
+            }
+        });
     });
 </script>
 
@@ -63,23 +80,23 @@
         </section>
     </main>
 
-    <section class="share">
-        <h3>Поделитесь страницей:</h3>
-        <div class="social-icons">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" target="_blank">
-                <img src="icons/facebook.png" alt="Facebook">
-            </a>
-            <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com&text=Интересная аналитика!" target="_blank">
-                <img src="icons/twitter.png" alt="Twitter">
-            </a>
-            <a href="https://vk.com/share.php?url=https://yourwebsite.com" target="_blank">
-                <img src="icons/vk.png" alt="ВКонтакте">
-            </a>
-            <a href="https://t.me/share/url?url=https://yourwebsite.com&text=Интересный материал!" target="_blank">
-                <img src="icons/telegram.png" alt="Telegram">
-            </a>
+    <!-- Кнопка вызова модального окна -->
+    <button class="open-modal">Связаться с менеджером</button>
+
+    <!-- Всплывающее окно -->
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Связаться с менеджером</h3>
+            <p>Заполните форму, и мы свяжемся с вами в ближайшее время.</p>
+            <form>
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="email" placeholder="Ваш email" required>
+                <textarea placeholder="Ваш вопрос" required></textarea>
+                <button type="submit">Отправить</button>
+            </form>
         </div>
-    </section>
+    </div>
 
     <footer>
         <p>&copy; 2025 Аналитика данных | <a href="contact.html">Связаться с нами</a></p>
